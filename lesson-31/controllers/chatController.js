@@ -27,8 +27,9 @@ module.exports = (io) => {
         console.log(`error: ${error.message}`);
       });
 
-    // Lesson 32.1 (p. 464)
-
+    socket.on("disconnect",() => {
+      console.log("User disconnected!");
+    });
     /**
      * Listing 31.2 (p. 451)
      */
@@ -56,5 +57,9 @@ module.exports = (io) => {
           console.log(`error: ${error.message}`);
         });
     });
+    /**
+     * Listing 31.10 (p. 459)
+     * message 저장
+     */
   });
 };
